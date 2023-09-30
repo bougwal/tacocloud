@@ -5,11 +5,16 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
 public class TacoOrder {
 
+  private Long id; 
+  private Date placedAt = new Date(); 
+  
   @NotBlank(message="Delivery name is required")
   private String deliveryName;
 
