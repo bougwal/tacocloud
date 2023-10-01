@@ -39,7 +39,7 @@ public class JdbcOrderRepository implements OrderRepository {
         + "cc_expiration, cc_cvv, placed_at) "
         + "values (?,?,?,?,?,?,?,?,?)",
         Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
-        Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
+        Types.LONGNVARCHAR, Types.VARCHAR, Types.VARCHAR,
         Types.VARCHAR, Types.VARCHAR, Types.TIMESTAMP
     );
     pscf.setReturnGeneratedKeys(true);
