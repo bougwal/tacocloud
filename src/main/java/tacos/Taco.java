@@ -1,9 +1,11 @@
 package tacos;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Data;
+import tacos.web.IngredientRef;
 
 @Data
 public class Taco {
@@ -16,7 +18,6 @@ public class Taco {
 
   @NotNull
   @Size(min=1, message="You must choose at least 1 ingredient")
-  private List<Ingredient> ingredients;
-
+  private List<IngredientRef> ingredients = new ArrayList<>();
 
 }
