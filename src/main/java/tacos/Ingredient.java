@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
 public class Ingredient implements Persistable<String> {
   
   @Id
-  private final String id;
-  private final String name;
-  private final Type type;
+  private String id;
+  private String name;
+  private Type type;
 
   @Override
   public boolean isNew(){
