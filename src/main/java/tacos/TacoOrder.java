@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 import java.io.Serializable;
@@ -14,13 +14,13 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-@Table
+@Document
 public class TacoOrder implements Serializable{
 
   private static final long serialVersionUID = 1L; 
   
   @Id
-  private Long id; 
+  private String id; 
   private Date placedAt = new Date(); 
   
   @NotBlank(message="Delivery name is required")
