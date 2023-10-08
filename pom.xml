@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>sia</groupId>
-  <artifactId>taco-cloud-jdbctemplate</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <artifactId>taco-cloud-sd-mongodb</artifactId>
+  <version>0.0.4-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>taco-cloud</name>
+  <name>taco-cloud-mongodb</name>
   <description>Taco Cloud Example</description>
 
   <parent>
@@ -75,24 +75,28 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jdbc</artifactId>
-    </dependency>
-    <!-- end::springJdbcTemplate[] -->
-    <!-- tag::h2database[] -->
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <!-- end::h2database[] -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
     </dependency>
+
+    <!-- tag::springDataMongoDb[] -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>
+        spring-boot-starter-data-mongodb
+      </artifactId>
+    </dependency>
+    <!-- end::springDataMongoDb[] -->
+    <!-- tag::flapDoodle[] -->
+    <dependency>
+      <groupId>de.flapdoodle.embed</groupId>
+      <artifactId>de.flapdoodle.embed.mongo</artifactId>
+      <!-- <scope>test</scope> -->
+    </dependency>
+    <!-- end::flapDoodle[] -->
   </dependencies>
 
   <build>
@@ -103,20 +107,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-    </pluginRepository>
-  </pluginRepositories>
-
 </project>
+
