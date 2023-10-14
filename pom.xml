@@ -84,10 +84,8 @@
 
     <!-- tag::springDataMongoDb[] -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>
-        spring-boot-starter-data-mongodb
-      </artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-mongodb</artifactId>
     </dependency>
     <!-- end::springDataMongoDb[] -->
     <!-- tag::flapDoodle[] -->
@@ -97,6 +95,12 @@
       <!-- <scope>test</scope> -->
     </dependency>
     <!-- end::flapDoodle[] -->
+    <!--Spring security starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <!-- end::spring security starter -->
   </dependencies>
 
   <build>
