@@ -1,4 +1,4 @@
-package tacos.web;
+package tacos.security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import tacos.data.UserRepository;
-import tacos.security.RegistrationForm;
 
 @Controller
 @RequestMapping("/register")
@@ -16,12 +15,12 @@ public class RegistrationController {
     private PasswordEncoder passwordEncoder; 
 
     public RegistrationController(UserRepository userRepo, PasswordEncoder passwordEncoder){
-        this.userRepository = userRepository; 
+        this.userRepository = userRepo; 
         this.passwordEncoder = passwordEncoder; 
     }
 
     @GetMapping
-    public String RegisterForm() { 
+    public String registerForm() { 
         return "registration"; 
     }
 
