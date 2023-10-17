@@ -2,10 +2,12 @@ package tacos.web.api;
 
 import java.util.Optional;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,5 +45,11 @@ public class TacoController {
     @ResponseStatus(HttpStatus.CREATED) 
     public Taco postTaco(@Requestbody Taco taco) {
        return  tacoRepository.save(taco);
+    }
+
+    @DeleteMapping("/{orderId}") 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteOrder(@PathVariable("orderId") Long orderId) {
+        try {tacoRepository.deleteById(orderId); } catch (EmptyResultDataAccessException e){}
     }
 }
