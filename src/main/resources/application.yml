@@ -7,3 +7,7 @@ spring:
   datasource:
     name: tacocloud
     generate-unique-name: false
+  artemis: 
+    broker-url: artemis.cloud.com
+    user: tacocloud
+    password: 1234
