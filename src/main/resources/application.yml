@@ -1,5 +1,9 @@
 
 spring:
+  # will create a base path for the rest api under /data-api where all generated endpoints will be exposed 
+  data: 
+    rest: 
+      base-path: /data-api
   datasource:
     name: tacocloud
     generate-unique-name: false
